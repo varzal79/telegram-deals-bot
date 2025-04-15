@@ -1,6 +1,6 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 # הכנס את הטוקן שלך
-TOKEN = "8153726499:AAFidSOZuGvSEBax17xjYMDlejBFOZ3uvVo"
+TOKEN = "8153726499:AAFS9sZkUGvSU2X2MS2P02bQmTT6NjAOzog"
 def start(update, context):
     update.message.reply_text("היי! אני הבוט שלך לדילים. שלח לי קישור ואני אבדוק אם אפשר להמיר אותו לאפיליאייט 💸")
 
