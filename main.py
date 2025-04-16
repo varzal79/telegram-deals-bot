@@ -1,5 +1,6 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-# הכנס את הטוקן שלך
+import time
+# הטוקן שלך מ-BotFather
 TOKEN = "8153726499:AAFS9sZkUGvSU2X2MS2P02bQmTT6NjAOzog"
 def start(update, context):
     update.message.reply_text("היי! אני הבוט שלך לדילים. שלח לי קישור ואני אבדוק אם אפשר להמיר אותו לאפיליאייט 💸")
@@ -15,7 +16,6 @@ def handle_message(update, context):
         update.message.reply_text(f"קיבלתי ממך:\n{text}")
 
 def main():
-    print("🚀 הבוט התחיל לרוץ ב-Render! מחכה להודעות...")
     updater = Updater(token=TOKEN, use_context=True)
     dp = updater.dispatcher
 
@@ -23,8 +23,11 @@ def main():
     dp.add_handler(MessageHandler(Filters.text & ~Filters.command, handle_message))
 
     updater.start_polling()
-    print("🔄 הבוט רץ עכשיו... חכה להודעות בטלגרם")
-    updater.idle()
+    print("🚀 הבוט רץ עכשיו... מחכה להודעות בטלגרם")
+
+    # במקום updater.idle() – נשאיר את התהליך רץ
+    while True:
+        time.sleep(15)
 
 if __name__ == '__main__':
     main()
